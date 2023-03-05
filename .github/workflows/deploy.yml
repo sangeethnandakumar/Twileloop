@@ -31,5 +31,8 @@ jobs:
           REMOTE_HOST: 4ih1.l.time4vps.cloud
           REMOTE_USER: root
           SOURCE: ./publish/
-          SCRIPT_AFTER: sudo service apache2 restart
           TARGET: /home/root/twileloop
+          SCRIPT_BEFORE: |
+            pkill dotnet
+          SCRIPT_AFTER: |
+            sudo service apache2 restart
