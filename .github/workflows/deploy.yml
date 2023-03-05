@@ -11,6 +11,7 @@ env:
   DOTNET_PUBLISH: "dotnet publish ./Twileloop/Twileloop.csproj --configuration Release --no-build --output ./publish"
   DOTNET_PUBLISH_DIR: "./publish/"
   DOTNET_DLL_NAME: "Twileloop.dll"
+  DOTNET_PUBLISH_PORT: 5000
   
   # Linux Config
   SERVER_SSH: ${{ secrets.DEPLOY_KEY }}
@@ -84,7 +85,7 @@ jobs:
           command_timeout: 10s
           script: |
             cd ${{ env.SERVER_TARGET_DIR }}
-            nohup dotnet ${{ env.DOTNET_DLL_NAME }} &>/dev/null &
+            nohup dotnet ${{ env.DOTNET_DLL_NAME }} --urls=http://localhost:${{ env.DOTNET_PUBLISH_PORT }} &>/dev/null &
             echo "Launched ${{ env.DOTNET_DLL_NAME }}"
             echo "Restarting Apache2..."
             sudo systemctl restart apache2
