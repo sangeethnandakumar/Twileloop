@@ -17,9 +17,6 @@ jobs:
 
       - name: Build .NET app
         run: dotnet build ./Twileloop.sln --configuration Release --verbosity normal  
-          
-      - name: Create publish directory
-        run: mkdir ./publish
   
       - name: Publish
         run: dotnet publish --configuration Release --no-build --output ./publish
@@ -27,12 +24,12 @@ jobs:
       - name: Deploy to remote server
         uses: easingthemes/ssh-deploy@v2.1.3
         with:          
-          args: -rltgoDzvO --delete          
-          target: /var/www/html          
+          args: -rltgoDzvO --delete
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
           DOTNET_ROOT: /usr/share/dotnet
           REMOTE_HOST: 4ih1.l.time4vps.cloud
           REMOTE_USER: root
-          SOURCE: ./publish
+          SOURCE: ./publish/
           SCRIPT_AFTER: sudo service apache2 restart
+          TARGET: /home/root/twileloop
