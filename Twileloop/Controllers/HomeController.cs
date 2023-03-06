@@ -12,6 +12,11 @@ namespace Twileloop.Controllers {
             return View();
         }
 
+        [Route("pos")]
+        public IActionResult Pos() {
+            return View();
+        }
+
         [Route("sangeethnandakumar")]
         public IActionResult Author()
         {
