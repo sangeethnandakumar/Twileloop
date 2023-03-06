@@ -11,7 +11,7 @@ env:
   DOTNET_PUBLISH: "dotnet publish ./Twileloop/Twileloop.csproj --configuration Release --no-build --output ./publish"
   DOTNET_PUBLISH_DIR: "./publish/"
   DOTNET_DLL_NAME: "Twileloop.dll"
-  DOTNET_PUBLISH_PORT: 5000
+  DOTNET_PUBLISH_PORT: 5001
   
   # Linux Config
   SERVER_SSH: ${{ secrets.DEPLOY_KEY }}
