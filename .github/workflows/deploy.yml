@@ -25,6 +25,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Cache dotnet packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.nuget/packages
+          key: ${{ env.DOTNET_RESTORE }}-${{ env.DOTNET_BUILD }}
+          restore-keys: |
+            ${{ env.DOTNET_RESTORE }}-
+            ${{ env.DOTNET_BUILD }}-
 
       - name: Restore
         run: ${{ env.DOTNET_RESTORE }}
