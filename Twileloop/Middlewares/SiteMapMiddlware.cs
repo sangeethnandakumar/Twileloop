@@ -1,73 +1,72 @@
-﻿using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Packages.Twileloop.Repository;
+using Serilog;
 using System.Text;
 using System.Xml.Linq;
 
-namespace Twileloop.Middlewares {
-    public class SitemapMiddleware {
+namespace Packages.Twileloop.Middlewares
+{
+    public class SitemapMiddleware
+    {
         private readonly RequestDelegate _next;
+        private readonly GitHubHandler gitHubHandler;
 
-        public SitemapMiddleware(RequestDelegate next) {
+        public SitemapMiddleware(RequestDelegate next, GitHubHandler gitHubHandler)
+        {
             _next = next;
+            this.gitHubHandler = gitHubHandler;
         }
 
-        public async Task InvokeAsync(HttpContext context, IWebHostEnvironment env, IActionDescriptorCollectionProvider actionDescriptorCollectionProvider, IRazorViewEngine razorViewEngine) {
-            if (context.Request.Path == "/sitemap.xml") {
-                // Get all the Razor pages in the application
-                var razorPages = actionDescriptorCollectionProvider.ActionDescriptors.Items
-                    .OfType<PageActionDescriptor>()
-                    .Where(ad => ad.RouteValues.ContainsKey("page"));
-
-                // Get the base URL of the application
-                var request = context.Request;
-                var scheme = request.Scheme;
-                var host = request.Host;
-                var pathBase = request.PathBase;
-                var baseUrl = $"{scheme}://{host}{pathBase}";
+        public async Task InvokeAsync(HttpContext context)
+        {
+            if (context.Request.Path == "/sitemap.xml")
+            {
+                var baseUrl = $"https://packages.twileloop.com";
 
                 // Generate the sitemap XML
                 XNamespace xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9";
-                var sitemap = new XDocument(
-                    new XDeclaration("1.0", "UTF-8", "yes"),
-                    new XElement(xmlns + "urlset",
-                        new XElement(xmlns + "url",
-                            new XElement(xmlns + "loc", $"{baseUrl}/"),
+
+                var packages = await gitHubHandler.FetchPackagesAsync(APIConstants.REPOS_TO_DISCOVER.ToArray());
+                packages = packages.OrderBy(x => x.Name).ToList();
+
+                var packageTags = new List<XElement>
+                {
+                    new XElement(xmlns + "url",
+                           new XElement(xmlns + "loc", $"{baseUrl}"),
+                           new XElement(xmlns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz")),
+                           new XElement(xmlns + "changefreq", "weekly"),
+                           new XElement(xmlns + "priority", "1.00")
+                       )
+                };
+
+                foreach (var package in packages)
+                {
+                    packageTags.Add(new XElement(xmlns + "url",
+                            new XElement(xmlns + "loc", $"{baseUrl}/{package.Name.ToLower()}"),
                             new XElement(xmlns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz")),
+                            new XElement(xmlns + "changefreq", "weekly"),
                             new XElement(xmlns + "priority", "1.00")
-                        ),
-                        new XElement(xmlns + "url",
-                            new XElement(xmlns + "loc", $"{baseUrl}/features"),
-                            new XElement(xmlns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz")),
-                            new XElement(xmlns + "priority", "0.80")
-                        ),
-                        new XElement(xmlns + "url",
-                            new XElement(xmlns + "loc", $"{baseUrl}/pricing"),
-                            new XElement(xmlns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz")),
-                            new XElement(xmlns + "priority", "0.80")
-                        ),
-                        new XElement(xmlns + "url",
-                            new XElement(xmlns + "loc", $"{baseUrl}/about"),
-                            new XElement(xmlns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz")),
-                            new XElement(xmlns + "priority", "0.80")
-                        )
-                    )
-                );
+                        ));
+                }
+                var sitemap = new XDocument(new XDeclaration("1.0", "UTF-8", "yes"), new XElement(xmlns + "urlset", packageTags));
 
                 // Return the sitemap XML as the response
                 context.Response.ContentType = "application/xml";
                 await context.Response.WriteAsync(sitemap.ToString(), Encoding.UTF8);
             }
-            else {
+            else
+            {
                 // Pass the request to the next middleware in the pipeline
                 await _next(context);
             }
         }
     }
 
-    public static class SitemapMiddlewareExtensions {
-        public static IApplicationBuilder UseSitemapMiddleware(this IApplicationBuilder app) {
+    public static class SitemapMiddlewareExtensions
+    {
+        public static IApplicationBuilder UseSitemapMiddleware(this IApplicationBuilder app)
+        {
             return app.UseMiddleware<SitemapMiddleware>();
         }
     }
+
 }

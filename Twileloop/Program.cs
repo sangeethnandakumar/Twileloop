@@ -1,28 +1,62 @@
-using Twileloop.Middlewares;
+using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.Net.Http.Headers;
+using Packages.Twileloop;
+using Packages.Twileloop.Middlewares;
+using Packages.Twileloop.Repository;
+using Westwind.AspNetCore.LiveReload;
 
 var builder = WebApplication.CreateBuilder(args);
+Configure.Serilog(builder);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddMemoryCache();
+builder.Services.AddLiveReload();
+builder.Services.AddSingleton<GitHubHandler>();
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true;
+    options.Providers.Add<GzipCompressionProvider>();
+});
 
 var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment()) {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+if (app.Environment.IsDevelopment())
+{
+    app.UseLiveReload();
+}
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        const int durationInSeconds = (60 * 60 * 24) * 90; // 3 months
+        ctx.Context.Response.Headers[HeaderNames.CacheControl]= $"public,max-age={durationInSeconds}";
+    }
+});
 app.UseSitemapMiddleware();
+
+
+app.Use(async (context, next) =>
+{
+    string cspValue = string.Join("; ", APIConstants.CONTENT_SECURITY_POLICY.Select(directive => directive.Key + " " + string.Join(" ", directive.Value)));
+    context.Response.Headers.Add("Content-Security-Policy", cspValue);
+    context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+    context.Response.Headers.Add("X-Frame-Options", "sameorigin");
+    context.Response.Headers.Add("Referrer-Policy", "strict-origin-when-cross-origin");
+    await next();
+});
 
 app.UseRouting();
 
-app.UseAuthorization();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseResponseCompression();
+}
 
 app.MapControllerRoute(
     name: "default",
