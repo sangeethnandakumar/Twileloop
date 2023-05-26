@@ -1,0 +1,23 @@
+﻿@using Packages.Twileloop.Helpers;
+@model Packages.Twileloop.ViewModels.PackageViewModel;
+
+<div class="marquee-container">
+    <div class="marquee" id="marquee">
+
+        @foreach (var package in Model.RecommendedPackages)
+        {
+            <div class="project-card">
+                <img src="@package.PackageIcon" alt="Project Image 1" class="project-image" style="width:50px !important" width="50" height="50">
+                <div class="project-details">
+                    <h4 class="project-title">@package.Name</h4>
+                    <div class="social-links">
+                        <a href="https://packages.twileloop.com/@package.Name.ToLower()" target="_blank" class="btn btn-social btn-explore">
+                            <i class="fa-regular fa-folder-open"></i>&nbsp;&nbsp;Explore Docs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

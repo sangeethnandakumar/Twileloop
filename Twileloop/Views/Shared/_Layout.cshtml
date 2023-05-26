@@ -1,312 +1,95 @@
-﻿
+﻿@using Packages.Twileloop.Helpers;
 <!DOCTYPE html>
-<!-- OLMO - Software, App, SaaS & Startup Landing Pages Pack design by DSAThemes (http://www.dsathemes.com) -->
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
-
-
 <head>
-	
-	<meta charset="UTF-8">
-	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-	<partial name="_Meta" />
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@ViewData["Description"].ToString().TrimWithEllipse(150)">
+    <title>@ViewData["Title"]</title>
 
-	<!-- FAVICON AND TOUCH ICONS -->
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="@CDNRoot.PROJECT/images/icons/favicon-96x96.png" type="image/x-icon">
+    <link rel="icon" href="@CDNRoot.PROJECT/images/icons/favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-128.png" sizes="128x128" />
 
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-152x152.png" />
 
-	<!-- BOOTSTRAP CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Microsoft Tiles -->
+    <meta name="application-name" content="Twileloop Packages" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-Tileimage" content="@CDNRoot.PROJECT/images/icons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="@CDNRoot.PROJECT/images/icons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="@CDNRoot.PROJECT/images/icons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="@CDNRoot.PROJECT/images/icons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="@CDNRoot.PROJECT/images/icons/mstile-310x310.png" />
 
-	<!-- FONT ICONS -->
-	<link href="css/flaticon.css" rel="stylesheet">
+    <!-- Google Chrome-->
+    <meta name="theme-color" content="#FFFFFF">
 
-	<!-- PLUGINS STYLESHEET -->
-	<link href="css/menu.css" rel="stylesheet">
-	<link id="effect" href="css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<link href="css/owl.carousel.min.css" rel="stylesheet">
-	<link href="css/owl.theme.default.min.css" rel="stylesheet">
+    <!-- CSS Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark-reasonable.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
 
-	<!-- ON SCROLL ANIMATION -->
-	<link href="css/animate.css" rel="stylesheet">
-
-	<!-- TEMPLATE CSS -->
-	<link href="css/style.css" rel="stylesheet">
-
-	<!-- RESPONSIVE CSS -->
-	<link href="css/responsive.css" rel="stylesheet">
+    <!-- CUSTOM JSDELIVER CDN DELIVERY -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sangeethnandakumar/CDNRack@master/shared/css/menu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sangeethnandakumar/CDNRack@master/shared/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sangeethnandakumar/CDNRack@master/shared/css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sangeethnandakumar/CDNRack@master/shared/css/theme.css">
 
 </head>
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2EEQ5SCYGP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2EEQ5SCYGP');
+</script>
 
 <body>
 
-	<!-- PAGE CONTENT
-	============================================= -->
-	<div id="page" class="page">
-
-
-
-
-		<!-- HEADER
-		============================================= -->
-		<header id="header" class="header tra-menu navbar-dark">
-			<div class="header-wrapper">
-
-
-				<!-- MOBILE HEADER -->
-				<div class="wsmobileheader clearfix">
-					<span class="smllogo"><img src="images/logo.png" alt="mobile-logo" /></span>
-					<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
-				</div>
-
-
-				<!-- NAVIGATION MENU -->
-				<div class="wsmainfull menu clearfix">
-					<div class="wsmainwp clearfix">
-
-
-						<!-- HEADER LOGO -->
-						<div class="desktoplogo"><a href="#hero-6" class="logo-black"><img src="images/logo.png" alt="header-logo"></a></div>
-						<div class="desktoplogo"><a href="#hero-6" class="logo-white"><img src="images/logo.png" alt="header-logo"></a></div>
-
-
-						<!-- MAIN MENU -->
-						<nav class="wsmenu clearfix">
-							<ul class="wsmenu-list nav-stateblue-hover">
-
-
-								<!-- SIMPLE NAVIGATION LINK -->
-								<li class="nl-simple" aria-haspopup="true"><a href="/">Home</a></li>
-
-								<!-- SIMPLE NAVIGATION LINK -->
-								<li class="nl-simple" aria-haspopup="true"><a href="/features">Features</a></li>
-
-								<!-- SIMPLE NAVIGATION LINK -->
-								<li class="nl-simple" aria-haspopup="true"><a href="/pricing">Pricing</a></li>
-
-								<li class="nl-simple" aria-haspopup="true"><a href="/about">About</a></li>
-
-
-								<!-- HEADER BUTTON -->
-								<li class="nl-simple" aria-haspopup="true">
-									<a href="#cta-11" class="btn btn-stateblue tra-grey-hover last-link">Goto Dashboard ➜</a>
-								</li>
-
-
-								<!-- HEADER SOCIAL LINKS
-								<li class="nl-simple white-color header-socials ico-20 clearfix" aria-haspopup="true">
-									<span><a href="#" class="ico-facebook"><span class="flaticon-facebook"></span></a></span>
-									<span><a href="#" class="ico-twitter"><span class="flaticon-twitter"></span></a></span>
-									<span><a href="#" class="ico-instagram"><span class="flaticon-instagram"></span></a></span>
-									<span><a href="#" class="ico-dribbble"><span class="flaticon-dribbble"></span></a></span>
-								</li> 
-								-->
-
-
-							</ul>
-						</nav>	<!-- END MAIN MENU -->
-
-
-					</div>
-				</div>	<!-- END NAVIGATION MENU -->
-
-
-			</div>     <!-- End header-wrapper -->
-		</header>	<!-- END HEADER -->
-		
-		
-		@RenderBody();
-
-		<footer id="footer-4" class="footer division">
-			<div class="container">
-
-
-				<!-- FOOTER CONTENT -->
-				<div class="row">
-
-
-					<!-- FOOTER INFO -->
-					<div class="col-lg-3">
-						<div class="footer-info mb-40">
-							<img class="footer-logo" src="images/logo.png" alt="footer-logo">
-						</div>
-					</div>
-
-
-					<!-- FOOTER LINKS -->
-					<div class="col-sm-6 col-md-3 col-lg-2 col-lg-2 col-xl-2 offset-xl-1">
-						<div class="footer-links mb-40">
-
-							<!-- Title -->
-							<h6 class="h6-xl">About</h6>
-
-							<!-- Footer Links -->
-							<ul class="foo-links text-secondary clearfix">
-								<li><p class="p-md"><a href="#">About Us</a></p></li>
-								<li><p class="p-md"><a href="#">Our Team</a></p></li>
-								<li><p class="p-md"><a href="#">Careers</a></p></li>
-								<li><p class="p-md"><a href="#">Press & Media</a></p></li>
-								<li><p class="p-md"><a href="#">Advertising</a></p></li>
-							</ul>
-
-						</div>
-					</div>
-
-
-					<!-- FOOTER LINKS -->
-					<div class="col-sm-6 col-md-3 col-lg-2">
-						<div class="footer-links mb-40">
-
-							<!-- Title -->
-							<h6 class="h6-xl">Discover</h6>
-
-							<!-- Footer List -->
-							<ul class="foo-links text-secondary clearfix">
-								<li><p class="p-md"><a href="#">Our Blog</a></p></li>
-								<li><p class="p-md"><a href="#">Plans & Pricing</a></p></li>
-								<li><p class="p-md"><a href="#">Testimonials</a></p></li>
-								<li><p class="p-md"><a href="#">Knowledge Base</a></p></li>
-								<li><p class="p-md"><a href="#">Cookie Policy</a></p></li>
-							</ul>
-
-						</div>
-					</div>
-
-
-					<!-- FOOTER LINKS -->
-					<div class="col-sm-6 col-md-3 col-lg-2">
-						<div class="footer-links mb-40">
-
-							<!-- Title -->
-							<h6 class="h6-xl">Support</h6>
-
-							<!-- Footer List -->
-							<ul class="foo-links text-secondary clearfix">
-								<li><p class="p-md"><a href="#">FAQs</a></p></li>
-								<li><p class="p-md"><a href="#">Editor Help</a></p></li>
-								<li><p class="p-md"><a href="#">Community</a></p></li>
-								<li><p class="p-md"><a href="#">Live Chatting</a></p></li>
-								<li><p class="p-md"><a href="#">Contact Us</a></p></li>
-							</ul>
-
-						</div>
-					</div>
-
-
-					<!-- FOOTER LINKS -->
-					<div class="col-sm-6 col-md-3 col-lg-3 col-xl-2">
-						<div class="footer-links mb-40">
-
-							<!-- Title -->
-							<h6 class="h6-xl">Connect With Us</h6>
-
-							<!-- Social Links -->
-							<ul class="footer-socials text-secondary ico-25 text-center clearfix">
-								<li><a href="#"><span class="flaticon-facebook"></span></a></li>
-								<li><a href="#"><span class="flaticon-twitter"></span></a></li>
-								<li><a href="#"><span class="flaticon-github"></span></a></li>
-								<li><a href="#"><span class="flaticon-youtube"></span></a></li>
-							</ul>
-
-						</div>
-					</div>
-
-
-				</div>	<!-- END FOOTER CONTENT -->
-
-
-				<hr>
-
-
-				<!-- BOTTOM FOOTER -->
-				<div class="bottom-footer">
-					<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
-
-
-						<!-- FOOTER COPYRIGHT -->
-						<div class="col">
-							<div class="footer-copyright">
-								<p>&copy; Copyright @(DateTime.Now.Year-1) - @DateTime.Now.Year Twileloop Enterprices. All Rights Reserved</p>
-							</div>
-						</div>
-
-
-						<!-- BOTTOM FOOTER LINKS -->
-						<div class="col">
-							<ul class="bottom-footer-list text-secondary text-end">
-								<li class="first-li"><p><a href="#">Privacy Policy</a></p></li>
-								<li><p><a href="#">Terms of Use</a></p></li>
-								<li class="last-li"><p><a href="#">Site Map</a></p></li>
-							</ul>
-						</div>
-
-
-					</div>  <!-- End row -->
-				</div>	<!-- BOTTOM FOOTER -->
-
-
-			</div>
-		</footer>	<!-- FOOTER-4 -->
-
-
-
-
-	</div>	<!-- END PAGE CONTENT -->
-	<!-- EXTERNAL SCRIPTS
-	============================================= -->
-	<script src="js/jquery-3.6.0.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/modernizr.custom.js"></script>
-	<script src="js/jquery.easing.js"></script>
-	<script src="js/jquery.appear.js"></script>
-	<script src="js/jquery.scrollto.js"></script>
-	<script src="js/menu.js"></script>
-	<script src="js/imagesloaded.pkgd.min.js"></script>
-	<script src="js/isotope.pkgd.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/quick-form.js"></script>
-	<script src="js/request-form.js"></script>
-	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/wow.js"></script>
-
-	<!-- Custom Script -->
-	<script src="js/custom.js"></script>
-
-	<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
-	<!--
-	<script>
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-XXXXX-X']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
-	-->
-
-
+    <div class="page" id="page">
+        <partial name="_Header" />
+        @RenderBody();
+        <partial name="_Footer" />
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+    <!-- JS PLUGINS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" integrity="sha512-rdhY3cbXURo13l/WU9VlaRyaIYeJ/KBakckXIvJNAQde8DgpOmE+eZf7ha4vdqVjTtwQt69bD2wH2LXob/LB7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <!-- CUSTOM JSDELIVER JS DELIVERY -->
+    <script src="https://cdn.jsdelivr.net/gh/sangeethnandakumar/CDNRack@master/shared/js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sangeethnandakumar/CDNRack@master/shared/js/theme.js"></script>  
+
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
 
 </body>
-
-
-
 </html>

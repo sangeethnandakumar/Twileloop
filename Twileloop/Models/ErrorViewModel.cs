@@ -1,4 +1,5 @@
-namespace Twileloop.Models {
+namespace Packages.Twileloop.Models
+{
     public class ErrorViewModel {
         public string? RequestId { get; set; }
 
