@@ -2,19 +2,8 @@ namespace Packages.Twileloop
 {
     public static class APIConstants
     {
-
-        //APP SPECIFIC
-        public static List<string> REPOS_TO_DISCOVER = new List<string>
-        {
-            "https://github.com/sangeethnandakumar/Twileloop.Security",
-            "https://github.com/sangeethnandakumar/Twileloop.UOW",
-            "https://github.com/sangeethnandakumar/Twileloop.Timezone",
-            "https://github.com/sangeethnandakumar/Twileloop.SpreadSheet",
-            "https://github.com/sangeethnandakumar/Twileloop.JetAPI"
-        };
-
         //Service
-        public const string SERVICENAME = "packages.twileloop.com";
+        public const string SERVICENAME = "twileloop.com";
 
         //Logging
         public const string SEQ_URL = "https://seq.twileloop.com";
@@ -34,7 +23,7 @@ namespace Packages.Twileloop
         public const string IILI = "iili.io";
         public const string DATA = "data:";
         public const string GSTATIC = "fonts.gstatic.com";
-        public const string WEBSOCKET_LOCAL = "wss://localhost:44336";
+        public const string WEBSOCKET_LOCAL = "wss://localhost:44364";
         public const string WEBSOCKET_REMOTE = "wss://twileloop.com";
 
 
