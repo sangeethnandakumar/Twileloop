@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Net.Http.Headers;
 using Packages.Twileloop;
-using Packages.Twileloop.Middlewares;
-using Packages.Twileloop.Repository;
 using Westwind.AspNetCore.LiveReload;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +11,6 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddMemoryCache();
 builder.Services.AddLiveReload();
-builder.Services.AddSingleton<GitHubHandler>();
 builder.Services.AddResponseCompression(options =>
 {
     options.EnableForHttps = true;
@@ -34,10 +31,9 @@ app.UseStaticFiles(new StaticFileOptions
     OnPrepareResponse = ctx =>
     {
         const int durationInSeconds = (60 * 60 * 24) * 90; // 3 months
-        ctx.Context.Response.Headers[HeaderNames.CacheControl]= $"public,max-age={durationInSeconds}";
+        ctx.Context.Response.Headers[HeaderNames.CacheControl] = $"public,max-age={durationInSeconds}";
     }
 });
-app.UseSitemapMiddleware();
 
 
 app.Use(async (context, next) =>
