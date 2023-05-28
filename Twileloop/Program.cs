@@ -36,16 +36,16 @@ app.UseStaticFiles(new StaticFileOptions
 });
 
 
-app.Use(async (context, next) =>
-{
-    string cspValue = string.Join("; ", APIConstants.CONTENT_SECURITY_POLICY.Select(directive => directive.Key + " " + string.Join(" ", directive.Value)));
-    context.Response.Headers.Add("Content-Security-Policy", cspValue);
-    context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
-    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
-    context.Response.Headers.Add("X-Frame-Options", "sameorigin");
-    context.Response.Headers.Add("Referrer-Policy", "strict-origin-when-cross-origin");
-    await next();
-});
+//app.Use(async (context, next) =>
+//{
+//    string cspValue = string.Join("; ", APIConstants.CONTENT_SECURITY_POLICY.Select(directive => directive.Key + " " + string.Join(" ", directive.Value)));
+//    context.Response.Headers.Add("Content-Security-Policy", cspValue);
+//    context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+//    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+//    context.Response.Headers.Add("X-Frame-Options", "sameorigin");
+//    context.Response.Headers.Add("Referrer-Policy", "strict-origin-when-cross-origin");
+//    await next();
+//});
 
 app.UseRouting();
 
