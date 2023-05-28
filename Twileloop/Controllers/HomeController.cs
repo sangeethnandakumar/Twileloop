@@ -11,5 +11,13 @@ namespace Packages.Twileloop.Controllers
             Log.Information("Visited {@Page}", "Index");
             return View();
         }
+
+        [HttpGet]
+        [Route("read")]
+        public async Task<IActionResult> Read()
+        {
+            Log.Information("Visited {@Page}", "Index");
+            return View();
+        }
     }
 }

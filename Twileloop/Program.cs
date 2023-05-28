@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Net.Http.Headers;
 using Packages.Twileloop;
+using Twileloop.Middlewares;
 using Westwind.AspNetCore.LiveReload;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,7 @@ app.UseStaticFiles(new StaticFileOptions
         ctx.Context.Response.Headers[HeaderNames.CacheControl] = $"public,max-age={durationInSeconds}";
     }
 });
+app.UseSitemapMiddleware();
 
 
 //app.Use(async (context, next) =>
