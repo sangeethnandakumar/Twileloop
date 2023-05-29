@@ -1,0 +1,35 @@
+﻿.gray-bg {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+    border-radius: 8px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-title p {
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.paragraph {
+    margin:10px;
+    padding: 45px;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #333333;
+    background-color: #ffffff;
+    line-height:40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    font-size: 40px !important;
+}

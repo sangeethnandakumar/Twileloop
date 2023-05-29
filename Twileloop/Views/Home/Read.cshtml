@@ -3,91 +3,6 @@
     ViewData["Description"] = "Free .NET NuGet packages for various needs from Sangeeth Nandakumar";
 }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-    <style>
-        @@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .gray-bg {
-            background-color: #f8f8f8;
-            padding: 50px 0;
-            border-radius: 8px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .section-title p {
-            font-size: 18px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .paragraph {
-            padding: 35px;
-            font-family: 'Merriweather', serif;
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
-            color: #333333;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-     <style>
-        /* Add your existing CSS styles here */
-
-        .ad-container {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 200px;
-            height: 400px;
-            background-color: #f8f8f8;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background:red;
-        }
-
-        .ad-container.left {
-            left: 20px;
-        }
-
-        .ad-container.right {
-            right: 20px;
-        }
-
-        @@media only screen and (max-width: 767px) {
-            .ad-container {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: 100px;
-                padding: 5px;
-            }
-
-            .ad-container.left,
-            .ad-container.right {
-                display: none;
-            }
-        }
-    </style>
-</head>
-
 <section id="hero-6" class="hero-section division">
     <div class="container">
         <div class="row d-flex align-items-center">
@@ -98,17 +13,30 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-7">
                                     <div class="section-title">
-                                        <h2>Enhancing Data Protection: Implementing AES Security in Your .NET Code</h2>
+                                        <h1>C# Async v/s Parallel</h1>
                                         <p>Securing Sensitive Information for Enhanced Application Security</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <p class="paragraph"><span class="first-letter">I</span>n an era where data breaches and cyber threats continue to make headlines, implementing robust security measures has become crucial for any software application. One such measure is AES (Advanced Encryption Standard), a widely adopted encryption algorithm known for its strength and efficiency. By integrating AES security into your .NET code, you can fortify your application's defenses and ensure the confidentiality and integrity of sensitive information.</p>
-                                </div>
-                                <div class="col-lg-12">
-                                    <p class="paragraph"><span class="first-letter">I</span>n an era where data breaches and cyber threats continue to make headlines, implementing robust security measures has become crucial for any software application. One such measure is AES (Advanced Encryption Standard), a widely adopted encryption algorithm known for its strength and efficiency. By integrating AES security into your .NET code, you can fortify your application's defenses and ensure the confidentiality and integrity of sensitive information.</p>
+                                    <p class="paragraph">
+                                        Multithreading is a concept in computer science and software development that allows multiple threads of execution to run concurrently within a single program. A thread is a lightweight unit of execution within a process, and multithreading enables concurrent execution of multiple threads, potentially improving the overall performance and responsiveness of an application.
+                                        Here are some key points about multithreading:
+                                    </p>
+                                    <p class="paragraph">
+                                        <img style="display:block; align-self: center" src="https://thumb.ac-illust.com/70/7064e90547764a863204d49de07dce62_t.jpeg" />
+                                        In the above example you can see a limeweed. Take a look at below now:
+                                    </p>
+                                    <p class="paragraph">
+                                        Concurrency: Multithreading enables concurrent execution, where multiple threads can perform different tasks simultaneously. Each thread has its own program counter, stack, and local variables, allowing it to execute independently.
+                                        Parallelism: Multithreading can take advantage of multiple processors or processor cores, allowing for true parallel execution of threads. This can result in increased throughput and improved performance on systems with multiple cores.
+                                        Shared Resources: When multiple threads access and manipulate shared resources, such as data structures or files, synchronization mechanisms are required to ensure correct and predictable behavior. Without proper synchronization, race conditions and data inconsistencies can occur.
+                                        Responsiveness: Multithreading is commonly used in user interfaces and interactive applications to ensure responsiveness. By moving time-consuming tasks to separate threads, the main thread can remain responsive to user input and provide a smoother user experience.
+                                        Complexity: Multithreading introduces additional complexities compared to single-threaded programming. Issues such as thread synchronization, deadlock, and resource contention need to be carefully handled to avoid bugs and ensure correct program behavior.
+                                        Task Parallelism: Multithreading can be used to achieve task parallelism, where a large task is divided into smaller subtasks that can be executed concurrently. This approach can lead to efficient utilization of system resources and improved overall performance.
+                                        Thread Pools: Thread pools are commonly used in multithreaded applications to manage a group of worker threads that can be reused for executing multiple tasks. Thread pools provide a level of abstraction and control over thread creation and destruction, minimizing the overhead of creating new threads.
+                                    </p>
                                 </div>
                             </div>
                         </div>
