@@ -14,6 +14,14 @@ namespace Packages.Twileloop.Controllers
         }
 
         [HttpGet]
+        [Route("portfolio")]
+        public async Task<IActionResult> Portfolio()
+        {
+            Log.Information("Visited {@Page}", "Index");
+            return View();
+        }
+
+        [HttpGet]
         [Route("blogs/{slug}")]
         public async Task<IActionResult> Blogs([FromRoute] string slug)
         {

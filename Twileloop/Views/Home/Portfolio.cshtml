@@ -1,0 +1,274 @@
+﻿@{
+    ViewData["Title"] = "Official Twileloop Packages | Productivity NuGet Packages";
+    ViewData["Description"] = "Free .NET NuGet packages for various needs from Sangeeth Nandakumar";
+}
+
+<style>
+
+    .section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .project-item {
+        margin-bottom: 30px;
+    }
+
+        .project-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .skill-list {
+        margin-bottom: 30px;
+    }
+
+        .skill-list li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background-color: deepskyblue;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+</style>
+
+
+
+<section style="margin-top:100px" class="section">
+    <div class="container">
+        <div class="row">
+            <partial name="_Author" />
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>My Interests / Projects</h2>
+        <div class="row">
+            <div class="col-md-4 project-item">
+                <img src="@CDNRoot.PROJECT/portfolio/projects.webp" alt="Project 1">
+                <h4 class="mt-4">100+ Projects Authored</h4>
+                <p>
+                    Developed numerous productive projects, and <u>open sourced many on GitHub</u>. Check out my portfolio with over 107 public repositories and counting!
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/sangeethnandakumar" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-github">
+                        <i class="fab fa-github"></i>&nbsp;View My Projects
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 project-item">
+                <img src="@CDNRoot.PROJECT/portfolio/packages.webp" alt="Project 1">
+                <h4 class="mt-4">10+ Packages Authored</h4>
+                <p>
+                    Developed open source .NET NuGet packages for enhanced productivity. My packages <u>received a total of 15.8K+ downloads</u> on NuGet.org as of May 4th 2023.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/sangeethnandakumar" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-github">
+                        <i class="fab fa-github"></i>&nbsp;View My Packages
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 project-item">
+                <img src="@CDNRoot.PROJECT/portfolio/blogs.webp" alt="Project 1">
+                <h4 class="mt-4">10+ Published Blogs</h4>
+                <p>
+                    A relatively new venture, Authored numerous tech-related blogs covering a wide range of topics. My blogs runs today at <u>1.2K+ views per week on avg</u> with global coverage.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/sangeethnandakumar" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-github">
+                        <i class="fab fa-github"></i>&nbsp;View My Blogs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About Me</h2>
+                <p>
+                    Experienced MTA-certified .NET professional with 5+ years of enterprise SSE & Technology Analyst experience. Proficient in C# and JavaScript, with expertise in React, Redux, and WebAPIs.
+                </p>
+                <p>
+                    Worked on many enterprice applications and microservices partucularly on healthcare domain.
+                </p>
+                <p>
+                    Author of numerous open source projects, packages and tech blogs.
+                </p>
+                <br />
+                <h4>Areas Of Interest</h4>
+                <ul class="skill-list">
+                    <li>Microservices</li>
+                    <li>.NET Core</li>
+                    <li>SQL Server</li>
+                    <li>WebAPI</li>
+                    <li>React + Redux</li>
+                    <li>JQuery</li>
+                    <li>Embeded Raspberry Pi</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Work Experience</h2>
+                <ul>
+                    <li>
+                        <h4>Infosys</h4>
+                        <p>Developer / Technology Analyst</p>
+                        <p>
+                            Infosys is a multinational corporation based in Bangalore, India. It provides technology consultation and is best known for its innovative solutions in software development, IT services, and talent pool.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Netrix LLC</h4>
+                        <p>Developer / Senior Software Engineer</p>
+                        <p>
+                            Netrix LLC is a global technology company based in Chicago, Illinois. It offers innovative solutions in IT infrastructure, collaboration, security, cloud, and managed services to businesses worldwide.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Awards & Achievements</h2>
+        <div class="row">
+            <div class="col-md-12 project-item" id="cert">
+                <center>
+                <img style="width: 85%; margin:30px" src="@CDNRoot.PROJECT/portfolio/criticaltaskfixcert.jpg" class="card-img-top" alt="Card Image">
+                </center>
+            </div>
+            <div class="col-md-4 project-item" id="item1">
+                <img src="@CDNRoot.PROJECT/portfolio/eom2020.png" alt="Project 1">
+                <h4 class="mt-4">Employee Of Month Apr 2020</h4>
+                <p>
+                    Awarded Employee Of The Month for April 2020 by Issued by Netrix LLC
+                </p>
+            </div>
+            <div class="col-md-4 project-item" id="item2">
+                <img src="@CDNRoot.PROJECT/portfolio/eom2019.png" alt="Project 1">
+                <h4 class="mt-4">Employee Of Month May 2019</h4>
+                <p>
+                    Awarded Employee Of The Month for May 2019 by Issued by Netrix LLC
+                </p>
+            </div>
+            <div class="col-md-4 project-item" id="item3">
+                <img src="@CDNRoot.PROJECT/portfolio/inno.png" alt="Project 1">
+                <h4 class="mt-4">Appreciation For Innovative Work</h4>
+                <p>
+                    Appreciation for developing an automation tool for time logging while at Netrix LLC
+                </p>
+            </div>            
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+             <div class="col-md-12 project-item">
+                <h2>Certifications</h2>
+                <div class="card" style="border-radius: 10px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);">
+                    <img style="width: 150px; margin:30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1280px-Microsoft_logo_%282012%29.svg.png" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h3>Microsoft Technology Associate (MTA)</h3>
+                        <p>
+                            MTA certifications are for individuals intending to build a career in desktop infrastructure, server infrastructure, or private cloud computing.
+                        </p>
+
+                        <h5 class="card-title">Granted on: March 2019</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Credential: <font color="skyblue">wCNW3-4Smb</font></h6>
+
+                        <div class="social-links">
+                            <a href="https://verify.certiport.com" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-github">
+                                <i class="fab fa-github"></i>&nbsp;Verify Certificate at Certiport
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 project-item">
+                <h2>My Hobby Projects</h2>
+                <div class="card" style="border-radius: 10px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);">
+                    <div class="card-body mt-3">
+                        <h3>Raspberry Pi & Embedded Electronics</h3>
+                        <p>
+                            A small project based on Raspberry Pi to make a cozy temprature, humidity and air flow auto controlled artificial bird nest for an abandoned bird chick got from backyard.
+                            <br/>
+                            Electronic PCB designed on Proteus, Embedded codding runs on .NET Core.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://photos.app.goo.gl/QQbnfLHnDdYFXRxf6" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-github">
+                                <i class="fab fa-github"></i>&nbsp;View More Photos And Videos On This Project
+                            </a>
+                        </div>
+                        <center class="mt-4">
+                        <iframe width="374" height="665" src="https://www.youtube.com/embed/exfThxnsdvA" title="Raspberry Pi Based Bird Nest | Sangeeth Nandakumar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                         <iframe width="374" height="665" src="https://www.youtube.com/embed/KEXsv1cYDq8" title=".NET on a Raspberry Pi 4 for iOT devices" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 project-item">
+                <div class="card" style="border-radius: 10px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);">
+                    <div class="card-body mt-3">
+                        <h3>AudioLab Android App</h3>
+                        <p>
+                            A small project based on Raspberry Pi to make a cozy temprature, humidity and air flow auto controlled artificial bird nest for an abandoned bird chick got from backyard.
+                            <br />
+                            Electronic PCB designed on Proteus, Embedded codding runs on .NET Core.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://photos.app.goo.gl/QQbnfLHnDdYFXRxf6" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-github">
+                                <i class="fab fa-github"></i>&nbsp;View More Photos And Videos On This Project
+                            </a>
+                        </div>
+                        <center class="mt-4">
+                            <img style="width: 350px; margin:30px" src="@CDNRoot.PROJECT/portfolio/audiolab1.png" class="card-img-top" alt="Card Image">
+                            <img style="width: 350px; margin:30px" src="@CDNRoot.PROJECT/portfolio/audiolab2.png" class="card-img-top" alt="Card Image">
+
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
