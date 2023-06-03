@@ -33,7 +33,11 @@ namespace Twileloop.Middlewares
                     var relativePath = cshtmlFile.Substring(viewsPath.Length + 1);
                     if (!relativePath.StartsWith("Shared") && !relativePath.Equals("_ViewStart.cshtml", StringComparison.OrdinalIgnoreCase) && !relativePath.Equals("_ViewImports.cshtml", StringComparison.OrdinalIgnoreCase))
                     {
-                        var url = $"{baseUrl}/{relativePath.Replace(".cshtml", "").Replace('\\', '/').ToLower()}";
+                        var url = $"{baseUrl}/{relativePath
+                            .Replace(".cshtml", "")
+                            .Replace('\\', '/')
+                            .ToLower()}";
+                        url = url.Replace("/home", "");
                         packageTags.Add(new XElement(xmlns + "url",
                             new XElement(xmlns + "loc", url),
                             new XElement(xmlns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz")),
