@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Xml.Linq;
 
 namespace Twileloop.Middlewares
@@ -28,24 +29,18 @@ namespace Twileloop.Middlewares
                 var viewsPath = Path.Combine(_environment.ContentRootPath, "Views");
                 var cshtmlFiles = Directory.GetFiles(viewsPath, "*.cshtml", SearchOption.AllDirectories);
 
-                foreach (var cshtmlFile in cshtmlFiles)
-                {
-                    var relativePath = cshtmlFile.Substring(viewsPath.Length + 1);
-                    if (!relativePath.StartsWith("Shared") && !relativePath.Equals("_ViewStart.cshtml", StringComparison.OrdinalIgnoreCase) && !relativePath.Equals("_ViewImports.cshtml", StringComparison.OrdinalIgnoreCase))
-                    {
-                        var url = $"{baseUrl}/{relativePath
-                            .Replace(".cshtml", "")
-                            .Replace('\\', '/')
-                            .ToLower()}";
-                        url = url.Replace("/home", "");
-                        packageTags.Add(new XElement(xmlns + "url",
-                            new XElement(xmlns + "loc", url),
+                packageTags.Add(new XElement(xmlns + "url",
+                            new XElement(xmlns + "loc", "https://twileloop.com"),
                             new XElement(xmlns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz")),
                             new XElement(xmlns + "changefreq", "weekly"),
                             new XElement(xmlns + "priority", "1.00")
                         ));
-                    }
-                }
+                packageTags.Add(new XElement(xmlns + "url",
+                           new XElement(xmlns + "loc", "https://twileloop.com/portfolio"),
+                           new XElement(xmlns + "lastmod", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz")),
+                           new XElement(xmlns + "changefreq", "weekly"),
+                           new XElement(xmlns + "priority", "1.00")
+                       ));
 
                 var sitemap = new XDocument(new XDeclaration("1.0", "UTF-8", "yes"), new XElement(xmlns + "urlset", packageTags));
 
