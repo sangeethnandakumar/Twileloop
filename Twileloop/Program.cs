@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Net.Http.Headers;
 using Packages.Twileloop;
 using Twileloop.Middlewares;
+using Twileloop.UOW;
 using Westwind.AspNetCore.LiveReload;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,12 @@ builder.Services.AddResponseCompression(options =>
 {
     options.EnableForHttps = true;
     options.Providers.Add<GzipCompressionProvider>();
+}); 
+builder.Services.AddUnitOfWork((uow) => {
+    uow.Connections = new List<LiteDBConnection>
+    {
+        new LiteDBConnection("Blogs", builder.Configuration.GetConnectionString("Blogs"))
+    };
 });
 
 var app = builder.Build();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using Twileloop.UOW;
 
 namespace Packages.Twileloop.Controllers
 {
@@ -13,8 +14,8 @@ namespace Packages.Twileloop.Controllers
         }
 
         [HttpGet]
-        [Route("read")]
-        public async Task<IActionResult> Read()
+        [Route("blogs/{slug}")]
+        public async Task<IActionResult> Blogs([FromRoute] string slug)
         {
             Log.Information("Visited {@Page}", "Index");
             return View();

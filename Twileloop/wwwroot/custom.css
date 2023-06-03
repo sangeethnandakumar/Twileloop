@@ -25,11 +25,15 @@
     text-align: justify;
     color: #333333;
     background-color: #ffffff;
-    line-height:40px;
+    line-height:38px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1{
     font-size: 40px !important;
+}
+
+#hero-6 {
+    padding-bottom: 30px !important;
 }

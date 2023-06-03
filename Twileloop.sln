@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33417.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twileloop", "Twileloop\Twileloop.csproj", "{DEF0341F-BB37-4F17-9F17-F96DBA3B70F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twileloop", "Twileloop\Twileloop.csproj", "{DEF0341F-BB37-4F17-9F17-F96DBA3B70F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twileloop.Application", "Twileloop.Application\Twileloop.Application.csproj", "{BCAF93B4-E1E8-434B-A564-CAC254CBC8EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twileloop.Domain", "Application.Domain\Twileloop.Domain.csproj", "{A2858C5D-C167-44AB-B6F3-72C888A5AD18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twileloop.Infrastructure", "Application.Infrastructure\Twileloop.Infrastructure.csproj", "{97EEF035-D3FE-4E3C-AC53-18B97879FDC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{DEF0341F-BB37-4F17-9F17-F96DBA3B70F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEF0341F-BB37-4F17-9F17-F96DBA3B70F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEF0341F-BB37-4F17-9F17-F96DBA3B70F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCAF93B4-E1E8-434B-A564-CAC254CBC8EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCAF93B4-E1E8-434B-A564-CAC254CBC8EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCAF93B4-E1E8-434B-A564-CAC254CBC8EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCAF93B4-E1E8-434B-A564-CAC254CBC8EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2858C5D-C167-44AB-B6F3-72C888A5AD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2858C5D-C167-44AB-B6F3-72C888A5AD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2858C5D-C167-44AB-B6F3-72C888A5AD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2858C5D-C167-44AB-B6F3-72C888A5AD18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97EEF035-D3FE-4E3C-AC53-18B97879FDC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97EEF035-D3FE-4E3C-AC53-18B97879FDC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97EEF035-D3FE-4E3C-AC53-18B97879FDC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97EEF035-D3FE-4E3C-AC53-18B97879FDC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

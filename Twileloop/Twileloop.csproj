@@ -2,23 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
-		<PackageReference Include="Markdig" Version="0.31.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.5" />
 		<PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.2.0" />
-		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
-		<PackageReference Include="Octokit" Version="6.0.0" />
 		<PackageReference Include="Serilog" Version="2.12.0" />
 		<PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
 		<PackageReference Include="Serilog.Sinks.Seq" Version="5.2.2" />
-		<PackageReference Include="Twileloop.Timezone" Version="2.0.0" />
 		<PackageReference Include="Westwind.AspNetCore.LiveReload" Version="0.4.2" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Application.Domain\Twileloop.Domain.csproj" />
+	  <ProjectReference Include="..\Application.Infrastructure\Twileloop.Infrastructure.csproj" />
+	  <ProjectReference Include="..\Twileloop.Application\Twileloop.Application.csproj" />
+	</ItemGroup>
+
 
 </Project>
