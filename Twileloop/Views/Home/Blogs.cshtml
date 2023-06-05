@@ -1,41 +1,202 @@
 ﻿@{
-    ViewData["Title"] = "Official Twileloop Packages | Productivity NuGet Packages";
-    ViewData["Description"] = "Free .NET NuGet packages for various needs from Sangeeth Nandakumar";
+    ViewData["Title"] = "Portfolio of Sangeeth Nandakumar | Technology Analyst";
+    ViewData["Description"] = "Experienced MTA-certified .NET professional with 5+ years of enterprise SSE & Technology Analyst experience. Proficient in C# and JavaScript, with expertise in React, Redux, and WebAPIs. Worked on many enterprice applications and microservices partucularly on healthcare domain. Author of numerous open source projects, packages and tech blogs.";
 }
 
-<section id="hero-6" class="hero-section division">
-    <div class="container">
-        <div class="row d-flex align-items-center">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h1>C# Async v/s Parallel</h1>
-                    <p>Securing Sensitive Information for Enhanced Application Security</p>
+<style>
+
+    .section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .project-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .skill-list {
+        margin-bottom: 30px;
+    }
+
+        .skill-list li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background-color: darkslateblue;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+    .blogimage {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        margin-top: 50px;
+    }
+
+    .project-item p {
+        text-align: left;
+        font-size: 18px;
+        color: #555;
+    }
+
+    @@media (max-width: 767px) {
+        /* Styles for mobile devices */
+        .title {
+            font-size: 32px !important;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 20px !important;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            font-family: serif;
+            color: black;
+        }
+
+        .project-item p {
+            text-align: justify;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .project-item {
+            margin-bottom: 12px;
+        }
+    }
+
+    @@media (min-width: 768px) {
+        /* Styles for desktop devices */
+        .title {
+            font-size: 40px !important;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 25px !important;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 25px;
+            font-family: serif;
+            color: black;
+        }
+    }
+</style>
+
+<div class="container" style="margin-top: 100px">
+
+    <!-- BLOG COVER IMAGE WIDESCREEN -->
+    <img class="blogimage" src="https://pbs.twimg.com/media/FrSsjL6WIAERRzd?format=jpg&name=4096x4096">
+    <!-- ARTICLE -->
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <article>
+                        <!-- BLOG TITLE & SUBTITLE -->
+                        <center>
+                            <h1 class="title">Request Validation in .NET Core WebAPI Using Fluent Validator</h1>
+                            <h3 class="subtitle">From installing to configuring FluentValidator in WebAPI</h3>
+                        </center>
+                        <hr />
+                        <!-- BLOG CONTENTS -->
+                        <div class="content">
+                            <p>
+                                I am an experienced MTA-certified .NET professional with 5+ years of enterprise SSE & Technology Analyst experience. I am proficient in C# and JavaScript, with expertise in React, Redux, and WebAPIs.
+                            </p>
+                            <p>
+                                I have worked on many enterprise applications and microservices, particularly in the healthcare domain.
+                            </p>
+                            <p>
+                                I am also the author of numerous open-source projects, packages, and tech blogs.
+                            </p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="works" class="division gray-bg">
-    <div class="container">
-        <section class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <article>
-                            <p class="paragraph">
-                                Multithreading is a concept in computer science and software development that allows multiple threads of execution to run concurrently within a single program. A thread is a lightweight unit of execution within a process, and multithreading enables concurrent execution of multiple threads, potentially improving the overall performance and responsiveness of an application.
+    <!-- RECOMENDADTIONS -->
+    <section class="section">
+        <h2>Related Contents</h2>
+        <ul class="skill-list">
+            <li>Microservices</li>
+            <li>.NET Core</li>
+            <li>SQL Server</li>
+            <li>WebAPI</li>
+            <li>React + Redux</li>
+            <li>jQuery</li>
+            <li>Embedded Raspberry Pi</li>
+        </ul>
+        <div class="row">
+            <article class="col-md-4 project-item">
+                <a href="#">
+                    <div class="card" style="border-radius: 10px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="@CDNRoot.PROJECT/portfolio/packages.webp">
+                        <div class="card-body">
+                            <h3>Introduction To XUnit + Moq</h3>
+                            <hr />
+                            <p>
+                                MTA certifications are for individuals intending to build a career in desktop infrastructure, server infrastructure, or private cloud computing.
                             </p>
-                            <p class="paragraph">
-                                Here are some key points about multithreading:
-                            </p>
-                            <ul>
-                                <li>Concurrency: Multithreading enables concurrent execution, where multiple threads can perform different tasks simultaneously. Each thread has its own program counter, stack, and local variables, allowing it to execute independently.</li>
-                            </ul>
-                        </article>
+                            <h5 class="card-title">Granted on: March 2019</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Updated: <span style="color: skyblue;">2 Days Before</span></h6>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
+                </a>
+            </article>
+            <article class="col-md-4 project-item">
+                <a href="#">
+                    <div class="card" style="border-radius: 10px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="@CDNRoot.PROJECT/portfolio/blogs.webp">
+                        <div class="card-body">
+                            <h3>Introduction To XUnit + Moq</h3>
+                            <hr />
+                            <p>
+                                MTA certifications are for individuals intending to build a career in desktop infrastructure, server infrastructure, or private cloud computing.
+                            </p>
+                            <h5 class="card-title">Granted on: March 2019</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Updated: <span style="color: skyblue;">2 Days Before</span></h6>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            <article class="col-md-4 project-item">
+                <a href="#">
+                    <div class="card" style="border-radius: 10px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="@CDNRoot.PROJECT/portfolio/projects.webp">
+                        <div class="card-body">
+                            <h3>Introduction To XUnit + Moq</h3>
+                            <hr />
+                            <p>
+                                MTA certifications are for individuals intending to build a career in desktop infrastructure, server infrastructure, or private cloud computing.
+                            </p>
+                            <h5 class="card-title">Granted on: March 2019</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Updated: <span style="color: skyblue;">2 Days Before</span></h6>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
+</div>
