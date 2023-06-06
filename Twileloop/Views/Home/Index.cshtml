@@ -1,92 +1,115 @@
 ﻿@{
-    ViewData["Title"] = "Official Twileloop Packages | Productivity NuGet Packages";
-    ViewData["Description"] = "Free .NET NuGet packages for various needs from Sangeeth Nandakumar";
+    ViewData["Title"] = "Twileloop Blogs | Technical Blogs In Programming";
+    ViewData["Description"] = "twileloop blogs are maintained by Sangeeth Nandakumar";
 }
 
-<section id="hero-6" class="hero-section division">
-    <div class="container">
-        <div class="row d-flex align-items-center">
+<style>
 
-            <section id="works" class="division">
-                <div class="container">
-                    
-                    <section class="section gray-bg" id="blog">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 text-center">
-                                    <div class="section-title">
-                                        <h2>Latest On NewsDesk</h2>
-                                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="blog-grid">
-                                        <div class="blog-img">
-                                            <div class="date">04 FEB</div>
-                                            <a href="#">
-                                                <img width="350" height="280" src="https://assets.fireside.fm/file/fireside-images/podcasts/images/3/306e7564-d5eb-4af3-b3b2-e6aa1f21a9ce/cover_medium.jpg?v=0" title="" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                                            <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="blog-grid">
-                                        <div class="blog-img">
-                                            <div class="date">04 FEB</div>
-                                            <a href="#">
-                                                <img src="https://www.bootdey.com/image/350x280/87CEFA/000000" title="" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                                            <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="blog-grid">
-                                        <div class="blog-img">
-                                            <div class="date">04 FEB</div>
-                                            <a href="#">
-                                                <img src="https://www.bootdey.com/image/350x280/FF7F50/000000" title="" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="blog-info">
-                                            <h5><a href="#">Prevent 75% of visitors from google analytics</a></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                                            <div class="btn-bar">
-                                                <a href="#" class="px-btn-arrow">
-                                                    <span>Read More</span>
-                                                    <i class="arrow"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+    .section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .project-item {
+        margin-bottom: 30px;
+    }
+
+        .project-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .skill-list {
+        margin-bottom: 30px;
+    }
+
+        .skill-list li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background-color: mediumvioletred;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+</style>
+
+<div class="container-fluid" style="margin-top:80px;">
+    <div class="row d-flex align-items-center">
+
+        <section id="works" class="division">
+            <div class="container-fluid" style="width: 80%">
+
+                <section class="section" id="blog">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7 text-center">
+                                <div class="section-title">
+                                    <h1>Latest On NewsDesk</h1>
+                                    <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites</p>
                                 </div>
                             </div>
                         </div>
-                    </section>
 
-                </div>
-            </section>
-        </div>
+                        <div class="row">
+
+                            <center class="mt-4">
+                                <ul class="skill-list">
+                                    <li>Microservices</li>
+                                    <li>.NET Core</li>
+                                    <li>SQL Server</li>
+                                    <li>WebAPI</li>
+                                    <li>React + Redux</li>
+                                    <li>jQuery</li>
+                                    <li>Embedded Raspberry Pi</li>
+                                </ul>
+                            </center>
+
+                            <partial name="_BlogItem_Horizontal" />                         
+                            
+
+                            <partial name="_BlogItem" />
+                            <partial name="_BlogItem" />
+                            <partial name="_BlogItem" />
+
+                            <partial name="_BlogItem_Horizontal" />
+
+                            <partial name="_BlogItem" />
+                            <partial name="_BlogItem" />
+                            <partial name="_BlogItem" />
+
+                            <partial name="_BlogItem_Horizontal" />
+
+                            <partial name="_BlogItem" />
+                            <partial name="_BlogItem" />
+                            <partial name="_BlogItem" />
+
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </section>
     </div>
-</section>
+</div>
