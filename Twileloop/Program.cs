@@ -2,7 +2,9 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Net.Http.Headers;
 using Packages.Twileloop;
 using Twileloop.Middlewares;
+using Twileloop.Repository;
 using Twileloop.UOW;
+using Twileloop.UOW.MongoDB.Support;
 using Westwind.AspNetCore.LiveReload;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,12 +20,14 @@ builder.Services.AddResponseCompression(options =>
     options.EnableForHttps = true;
     options.Providers.Add<GzipCompressionProvider>();
 }); 
-builder.Services.AddUnitOfWork((uow) => {
-    uow.Connections = new List<LiteDBConnection>
+builder.Services.AddUnitOfWork(options =>
+{
+    options.Connections = new List<MongoDBConnection>
     {
-        new LiteDBConnection("Blogs", builder.Configuration.GetConnectionString("Blogs"))
+         new MongoDBConnection("Packages", builder.Configuration.GetConnectionString("Packages"))
     };
 });
+builder.Services.AddSingleton<DataHandler>();
 
 var app = builder.Build();
 

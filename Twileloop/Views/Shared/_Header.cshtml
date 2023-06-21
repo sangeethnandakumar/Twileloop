@@ -1,4 +1,6 @@
-﻿<header id="header" class="header tra-menu navbar-dark">
+﻿@inject Twileloop.Repository.DataHandler DataHandler;
+
+<header id="header" class="header tra-menu navbar-dark">
     <div class="header-wrapper">
         <div class="wsmobileheader clearfix">
             <span class="smllogo"><img src="@CDNRoot.PROJECT/images/logo.webp" alt="mobile-logo" /></span>
@@ -47,21 +49,18 @@
                                 <li aria-haspopup="true">
                                     <a href="https://packages.twileloop.com">Explore All Packages ➜</a>
                                 </li>
-                                <li aria-haspopup="true">
-                                    <a href="https://packages.twileloop.com/twileloop.security">Security</a>
-                                </li>
-                                <li aria-haspopup="true">
-                                    <a href="https://packages.twileloop.com/twileloop.timezone">Timezone</a>
-                                </li>
-                                <li aria-haspopup="true">
-                                    <a href="https://packages.twileloop.com/twileloop.spreadsheet">Spreadsheet</a>
-                                </li>
-                                <li aria-haspopup="true">
-                                    <a href="https://packages.twileloop.com/twileloop.uow">Unit Of Work</a>
-                                </li>
-                                <li aria-haspopup="true">
-                                    <a href="https://packages.twileloop.com/twileloop.jetapi">JetAPI<span>BETA</span></a>
-                                </li>
+                                @foreach (var package in DataHandler.GetAllPackages().Result.OrderBy(x => x.Name))
+                                {
+                                    <li aria-haspopup="true">
+                                        <a href="@package.Url">
+                                            @package.Name.Replace("Twileloop.", "")
+                                            @if (package.IsBeta)
+                                            {
+                                                <span>BETA</span>
+                                            }
+                                        </a>
+                                    </li>
+                                }
                             </ul>
                         </li>
 
