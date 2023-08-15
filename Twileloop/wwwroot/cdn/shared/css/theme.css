@@ -1,0 +1,240 @@
+code {
+    font-size: large !important;
+}
+
+#banner {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    border-radius: 30px;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-left: 30px;
+}
+
+.profile-info {
+    margin-left: 30px;
+}
+
+.name {
+    font-size: 32px;
+    margin-top: 0;
+}
+
+.subheading {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-explore {
+    color: black;
+    background-color: lightgreen;
+    border-color: greenyellow;
+}
+
+    .btn-explore:hover {
+        color: white;
+        background-color: #000;
+        border-color: #000;
+    }
+
+.btn-nuget {
+    color: black;
+    background-color: #bfb0ff;
+    border-color: #bfb0ff;
+}
+
+    .btn-nuget:hover {
+        color: white;
+        background-color: #000;
+        border-color: #000;
+    }
+
+.btn-insta {
+    color: white;
+    background-color: orangered;
+    border-color: orange;
+}
+
+    .btn-insta:hover {
+        color: white;
+        background-color: #000;
+        border-color: #000;
+    }
+
+.btn-youtube {
+    color: white;
+    background-color: red;
+    border-color: orangered;
+}
+
+    .btn-youtube:hover {
+        color: white;
+        background-color: #000;
+        border-color: #000;
+    }
+
+.btn-github {
+    color: black;
+    background-color: #fff;
+    border-color: #333;
+}
+
+    .btn-github:hover {
+        color: #fff;
+        background-color: #333;
+        border-color: #000;
+    }
+
+.btn-linkedin {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-linkedin:hover {
+        color: white;
+        background-color: #000;
+        border-color: #000;
+    }
+
+.works-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+    animation-delay: -20s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+
+
+.project-card {
+    display: inline-block;
+    margin-right: 30px;
+    width: 350px;
+}
+
+.project-presentation-card {
+    display: inline-block;
+    margin-right: 30px;
+    width: 30%;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-details {
+    padding: 10px;
+}
+
+.project-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.project-subtitle {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.project-subsubtitle {
+    font-size: 14px;
+}
+
+.project-presentation-subsubtitle {
+    font-size: 18px;
+}
+
+/*.marquee-container:hover .marquee {
+    animation-play-state: paused;
+}
+*/
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 767px) {
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .profile-info {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .subheading {
+        font-size: 16px;
+    }
+
+    .social-links {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .btn-social {
+        margin: 5px;
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+code {
+    padding: 15px !important;
+    padding-left: 45px !important;
+    border-radius: 16px;
+}
