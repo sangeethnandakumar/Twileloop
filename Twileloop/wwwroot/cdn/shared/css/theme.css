@@ -238,3 +238,52 @@ code {
     padding-left: 45px !important;
     border-radius: 16px;
 }
+
+/* SITE CHANGES */
+.section {
+    padding: 60px 0;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.project-item {
+    margin-bottom: 30px;
+}
+
+    .project-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.skill-list {
+    margin-bottom: 30px;
+}
+
+    .skill-list li {
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: mediumvioletred;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 18px;
+    }
