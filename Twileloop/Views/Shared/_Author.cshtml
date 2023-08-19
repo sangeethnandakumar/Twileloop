@@ -1,16 +1,18 @@
-﻿<section id="" class="hero-section division mb-4">
+﻿@inject CDNRoot cdnRoot;
+
+<section id="" class="hero-section division mb-4">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-3">
                 <div class="profile">
-                    <img src="@CDNRoot.PROJECT/images/static/profile.webp" alt="Profile Photo Of Sangeeth Nandakumar" class="profile-photo rounded-circle" height="200" width="200">
+                    <img src="@cdnRoot.PROJECT/images/static/profile.webp" alt="Profile Photo Of Sangeeth Nandakumar" class="profile-photo rounded-circle" height="200" width="200">
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="profile-info">
-                    <h1 class="name"><font color="cornflowerblue">Hello</font>, I'm Sangeeth Nandakumar</h1>
+                    <h1 class="name"><font color="cornflowerblue">Hello</font>, I'm Sangeeth Nandakumar ...</h1>
                     <h4 class="subheading">
-                        Technology Analyst at Infosys | Hobbyist | OSS | Embedded
+                        Technology Analyst &nbsp; | &nbsp; Hobbyist &nbsp; | &nbsp; OSS &nbsp; | &nbsp; Embedded
                     </h4>
                     <span>
                         <i class="fa-solid fa-envelope"></i>&nbsp;
@@ -20,16 +22,16 @@
                         <a href="mailto:sangeethnandakumarwork@gmail.com">sangeethnandakumarwork@gmail.com</a>
                     </span>
                     <div class="social-links">
-                        <a href="https://github.com/sangeethnandakumar" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-github">
+                        <a href="@cdnRoot.GITHUB" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-github">
                             <i class="fab fa-github"></i>&nbsp;GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/sangeethnandakumar" aria-label="LinkedIn account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-linkedin">
+                        <a href="@cdnRoot.LINKEDIN" aria-label="LinkedIn account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-linkedin">
                             <i class="fab fa-linkedin"></i>&nbsp;LinkedIn
                         </a>
-                        <a href="https://www.instagram.com/sangeeth.nandakumar" aria-label="Instagram account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-insta">
+                        <a href="@cdnRoot.INSTAGRAM" aria-label="Instagram account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-insta">
                             <i class="fab fa-instagram"></i>&nbsp;Instagram
                         </a>
-                        <a href="https://www.youtube.com/@@thecodeswitch/videos" aria-label="YouTube account of Sangeeth Nandakumar (CodeSwitch)" target="_blank" class="btn btn-social btn-youtube">
+                        <a href="@cdnRoot.YOUTUBE" aria-label="YouTube account of Sangeeth Nandakumar (CodeSwitch)" target="_blank" class="btn btn-social btn-youtube">
                             <i class="fab fa-youtube"></i>&nbsp;YouTube
                         </a>
                     </div>

@@ -2,6 +2,7 @@
     ViewData["Title"] = "Portfolio of Sangeeth Nandakumar | Technology Analyst";
     ViewData["Description"] = "Experienced MTA-certified .NET professional with 5+ years of enterprise SSE & Technology Analyst experience. Proficient in C# and JavaScript, with expertise in React, Redux, and WebAPIs. Worked on many enterprice applications and microservices partucularly on healthcare domain. Author of numerous open source projects, packages and tech blogs.";
 }
+@inject CDNRoot cdnRoot;
 
 <style>
 
@@ -70,31 +71,31 @@
         <h2>My Interests / Projects</h2>
         <div class="row">
             <article class="col-md-4 project-item">
-                <img src="@CDNRoot.PROJECT/portfolio/projects.webp" alt="Project 1">
+                <img src="@cdnRoot.PROJECT/portfolio/projects.webp" alt="Project 1">
                 <h4 class="mt-4">100+ Projects Authored</h4>
                 <p>
                     Developed numerous productive projects and <u>open-sourced many on GitHub</u>. Discover over 107+ public repositories on GitHub and counting
                 </p>
                 <div class="social-links">
-                    <a href="https://github.com/sangeethnandakumar" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-linkedin">
+                    <a href="@cdnRoot.GITHUB" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-linkedin">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;&nbsp;&nbsp;View My Projects
                     </a>
                 </div>
             </article>
             <article class="col-md-4 project-item">
-                <img src="@CDNRoot.PROJECT/portfolio/packages.webp" alt="Project 1">
+                <img src="@cdnRoot.PROJECT/portfolio/packages.webp" alt="Project 1">
                 <h4 class="mt-4">10+ Packages Authored</h4>
                 <p>
                     Open-sourced numerous .NET packages which on cumulative received a total of 20.1K+ downloads</u> on NuGet.org as of May 4th, 2023.
                 </p>
                 <div class="social-links">
-                    <a href="https://github.com/sangeethnandakumar" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-linkedin">
+                    <a href="@cdnRoot.GITHUB" aria-label="GitHub account of Sangeeth Nandakumar" target="_blank" class="btn btn-social btn-linkedin">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;&nbsp;&nbsp;View My Packages
                     </a>
                 </div>
             </article>
             <article class="col-md-4 project-item">
-                <img src="@CDNRoot.PROJECT/portfolio/blogs.webp" alt="Project 1">
+                <img src="@cdnRoot.PROJECT/portfolio/blogs.webp" alt="Project 1">
                 <h4 class="mt-4">10+ Published Blogs</h4>
                 <p>
                     A new work in progress step, aiming to host tech blogs covering a wide range of topics. Total of 13 blogs where authored as of May 4th 2023.
@@ -171,25 +172,25 @@
         <div class="row">
             <div class="col-md-12 project-item" id="cert">
                 <center>
-                    <img style="width: 85%; margin:30px" src="@CDNRoot.PROJECT/portfolio/criticaltaskfixcert.jpg" class="card-img-top" alt="Certificate Image">
+                    <img style="width: 85%; margin:30px" src="@cdnRoot.PROJECT/portfolio/criticaltaskfixcert.jpg" class="card-img-top" alt="Certificate Image">
                 </center>
             </div>
             <div class="col-md-4 project-item" id="item1">
-                <img src="@CDNRoot.PROJECT/portfolio/eom2020.png" alt="Employee of the Month 2020">
+                <img src="@cdnRoot.PROJECT/portfolio/eom2020.png" alt="Employee of the Month 2020">
                 <h4 class="mt-4">Employee of the Month - April 2020</h4>
                 <p>
                     Awarded Employee of the Month for April 2020 by Netrix LLC
                 </p>
             </div>
             <div class="col-md-4 project-item" id="item2">
-                <img src="@CDNRoot.PROJECT/portfolio/eom2019.png" alt="Employee of the Month 2019">
+                <img src="@cdnRoot.PROJECT/portfolio/eom2019.png" alt="Employee of the Month 2019">
                 <h4 class="mt-4">Employee of the Month - May 2019</h4>
                 <p>
                     Awarded Employee of the Month for May 2019 by Netrix LLC
                 </p>
             </div>
             <div class="col-md-4 project-item" id="item3">
-                <img src="@CDNRoot.PROJECT/portfolio/inno.png" alt="Innovation Appreciation">
+                <img src="@cdnRoot.PROJECT/portfolio/inno.png" alt="Innovation Appreciation">
                 <h4 class="mt-4">Appreciation for Innovative Work</h4>
                 <p>
                     Received appreciation for developing an automation tool for time logging while at Netrix LLC
@@ -249,11 +250,11 @@
                         </div>
                         <center class="mt-4">
                             <video width="374" height="665" controls>
-                                <source src="@CDNRoot.PROJECT/portfolio/birdnest1.mp4" type="video/mp4">
+                                <source src="@cdnRoot.PROJECT/portfolio/birdnest1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                             <video width="374" height="665" controls>
-                                <source src="@CDNRoot.PROJECT/portfolio/birdnest2.mp4" type="video/mp4">
+                                <source src="@cdnRoot.PROJECT/portfolio/birdnest2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </center>
@@ -275,8 +276,8 @@
                             </a>
                         </div>
                         <center class="mt-4">
-                            <img style="width: 350px; margin:30px" src="@CDNRoot.PROJECT/portfolio/audiolab1.png" class="card-img-top" alt="AudioLab Android App Screenshot 1">
-                            <img style="width: 350px; margin:30px" src="@CDNRoot.PROJECT/portfolio/audiolab2.png" class="card-img-top" alt="AudioLab Android App Screenshot 2">
+                            <img style="width: 350px; margin:30px" src="@cdnRoot.PROJECT/portfolio/audiolab1.png" class="card-img-top" alt="AudioLab Android App Screenshot 1">
+                            <img style="width: 350px; margin:30px" src="@cdnRoot.PROJECT/portfolio/audiolab2.png" class="card-img-top" alt="AudioLab Android App Screenshot 2">
                         </center>
                     </div>
                 </div>

@@ -28,7 +28,9 @@ builder.Services.AddUnitOfWork(options =>
     };
 });
 builder.Services.AddSingleton<DataHandler>();
-
+builder.Services.Configure<DomainConfig>(builder.Configuration.GetSection("DomainConfig"));
+builder.Services.Configure<SocialConfig>(builder.Configuration.GetSection("SocialConfig"));
+builder.Services.AddSingleton<CDNRoot>();
 var app = builder.Build();
 
 

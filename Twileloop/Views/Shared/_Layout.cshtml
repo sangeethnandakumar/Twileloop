@@ -1,4 +1,6 @@
 ﻿@using Packages.Twileloop.Helpers;
+@inject CDNRoot cdnRoot;
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,32 +11,32 @@
     <title>@ViewData["Title"]</title>
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="@CDNRoot.PROJECT/images/icons/favicon-96x96.png" type="image/x-icon">
-    <link rel="icon" href="@CDNRoot.PROJECT/images/icons/favicon-32x32.png" type="image/x-icon">
-    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="images/png" href="@CDNRoot.PROJECT/images/icons/favicon-128.png" sizes="128x128" />
+    <link rel="shortcut icon" href="@cdnRoot.PROJECT/images/icons/favicon-96x96.png" type="image/x-icon">
+    <link rel="icon" href="@cdnRoot.PROJECT/images/icons/favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" type="images/png" href="@cdnRoot.PROJECT/images/icons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="images/png" href="@cdnRoot.PROJECT/images/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="images/png" href="@cdnRoot.PROJECT/images/icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="images/png" href="@cdnRoot.PROJECT/images/icons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="images/png" href="@cdnRoot.PROJECT/images/icons/favicon-128.png" sizes="128x128" />
 
     <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="@CDNRoot.PROJECT/images/icons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="@cdnRoot.PROJECT/images/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="@cdnRoot.PROJECT/images/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="@cdnRoot.PROJECT/images/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="@cdnRoot.PROJECT/images/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="@cdnRoot.PROJECT/images/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="@cdnRoot.PROJECT/images/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="@cdnRoot.PROJECT/images/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="@cdnRoot.PROJECT/images/icons/apple-touch-icon-152x152.png" />
 
     <!-- Microsoft Tiles -->
     <meta name="application-name" content="Twileloop Packages" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-Tileimage" content="@CDNRoot.PROJECT/images/icons/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="@CDNRoot.PROJECT/images/icons/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="@CDNRoot.PROJECT/images/icons/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="@CDNRoot.PROJECT/images/icons/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="@CDNRoot.PROJECT/images/icons/mstile-310x310.png" />
+    <meta name="msapplication-Tileimage" content="@cdnRoot.PROJECT/images/icons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="@cdnRoot.PROJECT/images/icons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="@cdnRoot.PROJECT/images/icons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="@cdnRoot.PROJECT/images/icons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="@cdnRoot.PROJECT/images/icons/mstile-310x310.png" />
 
     <!-- Google Chrome-->
     <meta name="theme-color" content="#FFFFFF">
@@ -52,18 +54,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sangeethnandakumar/CDNRack@master/shared/css/responsive.css">
 
     <!-- PLUGINS STYLESHEET -->
-    <link id="effect" href="@CDNRoot.SHARED/css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
-    <link href="@CDNRoot.SHARED/css/menu.css" rel="stylesheet">
-    <link href="@CDNRoot.SHARED/css/magnific-popup.css" rel="stylesheet">
-    <link href="@CDNRoot.SHARED/css/owl.carousel.min.css" rel="stylesheet">
-    <link href="@CDNRoot.SHARED/css/owl.theme.default.min.css" rel="stylesheet">
-    <link href="@CDNRoot.SHARED/css/animate.css" rel="stylesheet">
-    <link href="@CDNRoot.SHARED/css/style.css" rel="stylesheet">
-    <link href="@CDNRoot.SHARED/css/responsive.css" rel="stylesheet">
+    <link id="effect" href="@cdnRoot.SHARED/css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
+    <link href="@cdnRoot.SHARED/css/menu.css" rel="stylesheet">
+    <link href="@cdnRoot.SHARED/css/magnific-popup.css" rel="stylesheet">
+    <link href="@cdnRoot.SHARED/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="@cdnRoot.SHARED/css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="@cdnRoot.SHARED/css/animate.css" rel="stylesheet">
+    <link href="@cdnRoot.SHARED/css/style.css" rel="stylesheet">
+    <link href="@cdnRoot.SHARED/css/responsive.css" rel="stylesheet">
 
     <link href="/custom.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="@CDNRoot.SHARED/css/theme.css">
+    <link rel="stylesheet" href="@cdnRoot.SHARED/css/theme.css">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1753236641153411" crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->

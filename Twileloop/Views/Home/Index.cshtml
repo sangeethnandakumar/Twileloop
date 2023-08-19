@@ -2,7 +2,7 @@
     ViewData["Title"] = "Twileloop Blogs | Technical Blogs In Programming";
     ViewData["Description"] = "twileloop blogs are maintained by Sangeeth Nandakumar";
 }
-
+@inject CDNRoot cdnRoot;
 
 <div class="container-fluid" style="margin-top:80px;">
     <div class="row d-flex align-items-center">
@@ -15,12 +15,13 @@
 
                         <div class="row justify-content-center">
                             <div class="col-lg-7 text-center">
+                                <h1 style="color: deeppink">' Twileloop Blogs '</h1>
                                 <div class="section-title">
                                     <h3>The Website Is On Maintenance</h3>
                                     <h1>You can still browse other sections of the site, Click below</h1>
                                     <centre>
                                         <div class="social-links">
-                                            <a href="https://packages.twileloop.com" aria-label="Goto Twileloop Packages" target="_blank" class="btn btn-social btn-pink">
+                                            <a href="@cdnRoot.TWILELOOP_PACKAGES" aria-label="Goto Twileloop Packages" target="_blank" class="btn btn-social btn-pink">
                                                 Goto Twileloop Packages
                                             </a>
                                         </div>
@@ -44,7 +45,7 @@
                                     <li>Embedded Raspberry Pi</li>
                                 </ul> *@
 
-                                <img src="@CDNRoot.SHARED/images/work-in-progress.png" />
+                                <img src="@cdnRoot.SHARED/images/work-in-progress.png" />
                             </center>
 
                            @*  <partial name="_BlogItem_Horizontal" />                         
