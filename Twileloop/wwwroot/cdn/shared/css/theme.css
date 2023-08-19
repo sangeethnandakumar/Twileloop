@@ -45,9 +45,8 @@ code {
 }
 
 .btn-explore {
-    color: black;
-    background-color: lightgreen;
-    border-color: greenyellow;
+    color: white;
+    background-color: #793bde;
 }
 
     .btn-explore:hover {
@@ -58,8 +57,7 @@ code {
 
 .btn-nuget {
     color: black;
-    background-color: #bfb0ff;
-    border-color: #bfb0ff;
+    background-color: #f0e9fb;
 }
 
     .btn-nuget:hover {
