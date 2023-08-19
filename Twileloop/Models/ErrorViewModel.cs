@@ -5,4 +5,9 @@ namespace Packages.Twileloop.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
+
+    public class ErrorVM
+    {
+        public string Referer { get; set; }
+    }
 }

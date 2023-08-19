@@ -65,6 +65,7 @@ app.UseSitemapMiddleware();
 //    await next();
 //});
 
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 app.UseRouting();
 
 if (!app.Environment.IsDevelopment())
