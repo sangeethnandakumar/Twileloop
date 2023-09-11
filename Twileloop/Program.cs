@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Net.Http.Headers;
 using Packages.Twileloop;
+using Packages.Twileloop.Controllers;
 using Twileloop.Middlewares;
 using Twileloop.Repository;
 using Twileloop.UOW;
@@ -28,6 +29,7 @@ builder.Services.AddUnitOfWork(options =>
     };
 });
 builder.Services.AddSingleton<DataHandler>();
+builder.Services.AddSingleton<HomeController>();
 builder.Services.Configure<DomainConfig>(builder.Configuration.GetSection("DomainConfig"));
 builder.Services.Configure<SocialConfig>(builder.Configuration.GetSection("SocialConfig"));
 builder.Services.AddSingleton<CDNRoot>();

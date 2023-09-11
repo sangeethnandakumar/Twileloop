@@ -10,4 +10,11 @@ namespace Packages.Twileloop.Models
     {
         public string Referer { get; set; }
     }
+
+    public class Redirect
+    {
+        public string RedirectFrom { get; set; }
+        public string RedirectTo { get; set; }
+        public DateTime Event { get; set; }
+    }
 }

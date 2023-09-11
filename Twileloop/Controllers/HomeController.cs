@@ -15,7 +15,7 @@ namespace Packages.Twileloop.Controllers
         }
 
         [HttpGet]
-        [Route("portfolio")]
+        [Route("sangeeth.nandakumar")]
         public async Task<IActionResult> Portfolio()
         {
             Log.Information("Visited {@Page}", "Index");
@@ -32,13 +32,26 @@ namespace Packages.Twileloop.Controllers
 
         [HttpGet]
         [Route("error")]
-        public async Task<IActionResult> Error([FromQuery]string referer)
+        public async Task<IActionResult> Error([FromQuery] string referer)
         {
-            var errorVM = new ErrorVM
+            var model = new ErrorVM
             {
                 Referer = referer,
             };
-            return View(errorVM);
+            return View(model);
+        }
+
+        [HttpGet]
+        [Route("redirect")]
+        public async Task<IActionResult> Redirect([FromQuery] string from, [FromQuery] string to)
+        {
+            var model = new Redirect
+            {
+                RedirectFrom = from,
+                RedirectTo = to,
+                Event = DateTime.UtcNow
+            };           
+            return View(model);
         }
     }
 }
