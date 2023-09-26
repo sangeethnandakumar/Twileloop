@@ -55,6 +55,18 @@ code {
         border-color: #000;
     }
 
+.btn-major {
+    color: black;
+    background-color: #faf7fe;
+    border-color: black;
+}
+
+    .btn-major:hover {
+        color: black;
+        background-color: #d3b8f8;
+        border-color: black;
+    }
+
 .btn-nuget {
     color: black;
     background-color: #f0e9fb;
