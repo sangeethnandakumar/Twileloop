@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using System.Text;
+using Twileloop.Helpers;
 using Twileloop.Models;
 using Twileloop.UOW.MongoDB.Core;
 
@@ -21,11 +22,12 @@ namespace Packages.Twileloop.Controllers
         [Route("projects/home")]
         public async Task<IActionResult> Index([FromQuery] string anchor = null)
         {
-            var clientIp = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
             if (anchor is not null)
             {
+                var clientIp = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
                 var decodedIntegrity = Encoding.UTF8.GetString(Convert.FromBase64String(anchor));
-                Log.Fatal("{@User}: visited project '{@Page}' from {@IP}", decodedIntegrity, "Home", clientIp);
+                var ipDetails = await IPTracker.GetIPInfoAsync(clientIp);
+                Log.Fatal("{@User}: visited '{@Page}' from {@IP}", decodedIntegrity, "Home", ipDetails);
             }
             var allProjects = projectRepo.GetAll().ToList();
             return View("home", allProjects);
@@ -37,8 +39,10 @@ namespace Packages.Twileloop.Controllers
         {
             if (anchor is not null)
             {
+                var clientIp = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
                 var decodedIntegrity = Encoding.UTF8.GetString(Convert.FromBase64String(anchor));
-                Log.Fatal("{@User}: visited project '{@Page}'", decodedIntegrity, slug);
+                var ipDetails = await IPTracker.GetIPInfoAsync(clientIp);
+                Log.Fatal("{@User}: visited '{@Page}' from {@IP}", decodedIntegrity, slug, ipDetails);
             }
             var project = projectRepo.Find(x => x.Slug == slug).FirstOrDefault();
             return View("Project", project);
