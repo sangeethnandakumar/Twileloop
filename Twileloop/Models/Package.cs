@@ -2,6 +2,7 @@
 
 namespace Twileloop.Models
 {
+
     public class Package : EntityBase
     {
         public string Name { get; set; }

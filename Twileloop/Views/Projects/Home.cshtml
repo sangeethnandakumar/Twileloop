@@ -1,0 +1,56 @@
+﻿@using Twileloop.Models;
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Portfolio of Sangeeth Nandakumar | Technology Analyst";
+    ViewData["Description"] = "Experienced MTA-certified .NET professional with 5+ years of enterprise SSE & Technology Analyst experience. Proficient in C# and JavaScript, with expertise in React, Redux, and WebAPIs. Worked on many enterprice applications and microservices partucularly on healthcare domain. Author of numerous open source projects, packages and tech blogs.";
+}
+@inject CDNRoot cdnRoot;
+@inject IHttpContextAccessor accessor;
+@model List<Project>;
+
+<style>
+    .btn {
+        background: deeppink !important;
+    }
+</style>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-1 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Hey.. Explore Projects I Developed</h1>
+        <p class="lead font-weight-normal">
+            This is where I showcase recent projects I developed and you can go through them to see if I'm a good fit for you. Feel free to discuss any requirements
+        </p>
+    </div>
+</div>
+
+<div class="container px-4 py-5" id="custom-cards">
+    <h3 class="pb-2 border-bottom">Click To See Screenshots/Videos</h3>
+
+    <div class="row">
+
+        @foreach (var project in Model)
+        {
+            var queryParams = accessor.HttpContext.Request.QueryString;
+            var finalUrl = $"/projects/{project.Slug}{queryParams}";
+
+            <div class="col-md-4 mt-4" onclick="window.location.href='@finalUrl'" style="cursor: pointer !important">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgelg_as_QCGE_VPnHYT0l1CYu97QbonWW6i5gysXXoP5qGNLmMQiat-NGdc4JjhkS_5A&usqp=CAU');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-white">
+                            @project.Name
+                        </h3>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        Project Details & Screenshots
+                    </button>
+
+
+
+
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>

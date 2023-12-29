@@ -28,6 +28,7 @@ builder.Services.AddUnitOfWork(options =>
          new MongoDBConnection("Packages", builder.Configuration.GetConnectionString("Packages"))
     };
 });
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<DataHandler>();
 builder.Services.AddSingleton<HomeController>();
 builder.Services.Configure<DomainConfig>(builder.Configuration.GetSection("DomainConfig"));

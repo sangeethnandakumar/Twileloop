@@ -22,6 +22,7 @@ namespace Packages.Twileloop.Controllers
             return View();
         }
 
+
         [HttpGet]
         [Route("blogs/{slug}")]
         public async Task<IActionResult> Blogs([FromRoute] string slug)

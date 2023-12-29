@@ -1,0 +1,144 @@
+﻿@using Twileloop.Models;
+@{
+    ViewData["Title"] = "Portfolio of Sangeeth Nandakumar | Technology Analyst";
+    ViewData["Description"] = "Experienced MTA-certified .NET professional with 5+ years of enterprise SSE & Technology Analyst experience. Proficient in C# and JavaScript, with expertise in React, Redux, and WebAPIs. Worked on many enterprice applications and microservices partucularly on healthcare domain. Author of numerous open source projects, packages and tech blogs.";
+}
+@inject CDNRoot cdnRoot;
+@model Project;
+
+<style>
+
+    .section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .project-item {
+        margin-bottom: 30px;
+    }
+
+        .project-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .skill-list {
+        margin-bottom: 30px;
+    }
+
+        .skill-list li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background-color: deepskyblue;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+</style>
+
+
+
+<section style="margin-top: 50px" class="section">
+    <div class="container">
+        <div class="row">
+            <section id="" class="hero-section division mb-4">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <div class="profile-info">
+                                <h1 class="name"><font color="deeppink">WELCOME TO MY </font>PROJECT GALLERY</h1>
+                                <h4 class="subheading ">
+                                    My gallery where you can explore the projects I developed
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+
+<section class="">
+
+    <div class="container">
+
+        <hr />
+        <center>
+            <h1 class="mt-3">
+                @Model.Name
+            </h1>
+            <h2 class="subheading mb-4 desc">
+                @Model.Description
+            </h2>
+        </center>
+
+        <hr />
+
+        <div class="row">
+
+            <h4>VIDEOS:</h4>
+            @if(Model.Videos.Any())
+            {
+                <div class="alert alert-primary" role="alert">
+                    Few videos demonstrating the software:
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    Haven't added any videos yet, Check my other projects for videos
+                </div>
+            }
+            @foreach(var video in Model.Videos)
+            {
+                <iframe class="mt-3" width="1088" height="612" src="@video" title="Sangeeth Nandakumar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            }
+
+            <hr/>
+
+            <h4 class="mt-4">SCREENSHOTS:</h4>
+            @if (Model.Images.Any())
+            {
+                <div class="alert alert-primary" role="alert">
+                    Few screenshots demonstrating the software:
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    Haven't added any screenshots yet, Check my other projects for screenshots
+                </div>
+            }
+            @foreach (var image in Model.Images)
+            {
+                <article class="mt-3 col-md-6 project-item">
+                    <img src="@image" alt="Project 1">
+                </article>
+            }
+         
+        </div>
+    </div>
+</section>
