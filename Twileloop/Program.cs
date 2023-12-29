@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Net.Http.Headers;
 using Packages.Twileloop;
@@ -27,6 +28,10 @@ builder.Services.AddUnitOfWork(options =>
     {
          new MongoDBConnection("Packages", builder.Configuration.GetConnectionString("Packages"))
     };
+});
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
 });
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<DataHandler>();
@@ -70,6 +75,7 @@ app.UseSitemapMiddleware();
 
 app.UseMiddleware<ExceptionHandlerMiddleware>();
 app.UseRouting();
+app.UseForwardedHeaders();
 
 if (!app.Environment.IsDevelopment())
 {

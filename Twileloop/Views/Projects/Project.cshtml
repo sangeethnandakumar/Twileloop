@@ -6,6 +6,41 @@
 @inject CDNRoot cdnRoot;
 @model Project;
 
+<script>
+    function GenerateAnchorURL() {
+        debugger;
+
+        // Get the current URL
+        var currentURL = window.location.href;
+
+        // Get the value from the search textbox
+        var searchValue = document.getElementById('search').value;
+
+        // Convert the search value to base64
+        var base64Value = btoa(searchValue);
+
+        // Form the new URL with the base64 value
+        var newURL = currentURL.split('?')[0] + '?anchor=' + base64Value;
+
+        // Check if the current URL has an anchor query
+        if (currentURL.includes('anchor=')) {
+            // Replace the existing anchor query with the new one
+            newURL = currentURL.replace(/anchor=[^&]+/, 'anchor=' + base64Value);
+        }
+
+        // Copy the new URL to the clipboard
+        var dummy = document.createElement('input');
+        document.body.appendChild(dummy);
+        dummy.value = newURL;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+
+        // Change the text color to green to indicate success
+        document.getElementById('search').style.color = 'green';
+    }
+</script>
+
 <style>
 
     .section {
@@ -71,6 +106,14 @@
                                 <h4 class="subheading ">
                                     My gallery where you can explore the projects I developed
                                 </h4>
+                                <nav class="navbar bg-body-tertiary">
+                                    <div class="container-fluid">
+                                        <div class="d-flex" role="search">
+                                            <input class="form-control me-2" id="search" placeholder="Anchor" aria-label="Search">
+                                            <button onclick="GenerateAnchorURL()" class="btn btn-outline-success" type="submit">Copy URL</button>
+                                        </div>
+                                    </div>
+                                </nav>
                             </div>
                         </div>
                     </div>

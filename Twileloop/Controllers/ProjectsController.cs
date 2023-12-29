@@ -21,10 +21,11 @@ namespace Packages.Twileloop.Controllers
         [Route("projects/home")]
         public async Task<IActionResult> Index([FromQuery] string anchor = null)
         {
+            var clientIp = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
             if (anchor is not null)
             {
                 var decodedIntegrity = Encoding.UTF8.GetString(Convert.FromBase64String(anchor));
-                Log.Fatal("{@User}: visited project '{@Page}'", decodedIntegrity, "Home");
+                Log.Fatal("{@User}: visited project '{@Page}' from {@IP}", decodedIntegrity, "Home", clientIp);
             }
             var allProjects = projectRepo.GetAll().ToList();
             return View("home", allProjects);
