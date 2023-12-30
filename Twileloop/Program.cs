@@ -59,7 +59,7 @@ app.UseStaticFiles(new StaticFileOptions
         ctx.Context.Response.Headers[HeaderNames.CacheControl] = $"public,max-age={durationInSeconds}";
     }
 });
-app.UseSitemapMiddleware();
+app.UseMiddleware<RobotsMiddleware>();
 
 
 //app.Use(async (context, next) =>
