@@ -1,15 +1,12 @@
 ﻿@using Twileloop.Models;
 @{
-    ViewData["Title"] = "Portfolio of Sangeeth Nandakumar | Technology Analyst";
-    ViewData["Description"] = "Experienced MTA-certified .NET professional with 5+ years of enterprise SSE & Technology Analyst experience. Proficient in C# and JavaScript, with expertise in React, Redux, and WebAPIs. Worked on many enterprice applications and microservices partucularly on healthcare domain. Author of numerous open source projects, packages and tech blogs.";
+    ViewData["Title"] = "My Projects";
 }
 @inject CDNRoot cdnRoot;
 @model Project;
 
 <script>
     function GenerateAnchorURL() {
-        debugger;
-
         // Get the current URL
         var currentURL = window.location.href;
 
@@ -37,11 +34,20 @@
         document.body.removeChild(dummy);
 
         // Change the text color to green to indicate success
-        document.getElementById('search').style.color = 'green';
+        document.getElementById('search').style.color = 'lightgreen';
     }
 </script>
 
 <style>
+
+    .anchor button{
+        background: green
+    }
+
+    .anchor button:hover {
+        background: lightgreen;
+        color: white;
+    }
 
     .section {
         padding: 60px 0;
@@ -106,14 +112,6 @@
                                 <h4 class="subheading ">
                                     My gallery where you can explore the projects I developed
                                 </h4>
-                                <nav class="navbar bg-body-tertiary">
-                                    <div class="container-fluid">
-                                        <div class="d-flex" role="search">
-                                            <input class="form-control me-2" id="search" placeholder="Anchor" aria-label="Search">
-                                            <button onclick="GenerateAnchorURL()" class="btn btn-outline-success" type="submit">Copy URL</button>
-                                        </div>
-                                    </div>
-                                </nav>
                             </div>
                         </div>
                     </div>
@@ -185,3 +183,14 @@
         </div>
     </div>
 </section>
+
+<hr/>
+
+<nav class="navbar bg-body-tertiary anchor">
+    <div class="container-fluid">
+        <div class="d-flex" role="search">
+            <input class="form-control" id="search" placeholder="Generate Permalink" aria-label="Search">
+            <button onclick="GenerateAnchorURL()" class="btn m-0" type="submit">Copy</button>
+        </div>
+    </div>
+</nav>

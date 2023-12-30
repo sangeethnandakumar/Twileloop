@@ -1,13 +1,33 @@
 ﻿@using Packages.Twileloop.Helpers;
+@using Microsoft.Extensions.Configuration
 @inject CDNRoot cdnRoot;
+@inject IConfiguration Configuration
+
+@functions {
+    private bool IsRobotExcluded()
+    {
+        var disallowedPaths = Configuration.GetSection("RobotsExclusion").Get<List<string>>() ?? new List<string>();
+        var currentPath = Context.Request.Path;
+        return disallowedPaths.Any(path => currentPath.StartsWithSegments(path));
+    }
+}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="@ViewData["Description"].ToString().TrimWithEllipse(150)">
+  
+    @if (IsRobotExcluded())
+    {
+        <meta name="robots" content="noindex" />
+    }
+    else
+    {
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="@ViewData["Description"].ToString().TrimWithEllipse(150)">
+    }
+
     <title>@ViewData["Title"]</title>
 
     <!-- Favicons -->
@@ -66,20 +86,20 @@
     <link href="/custom.css" rel="stylesheet">
 
     <link rel="stylesheet" href="@cdnRoot.SHARED/css/theme.css">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1753236641153411" crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EEQ5SCYGP"></script>
 
 </head>
 
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-        gtag('config', 'G-2EEQ5SCYGP');
-    </script>
+    gtag('config', 'G-2EEQ5SCYGP');
+</script>
 <body>
 
     <div class="page" id="page">
