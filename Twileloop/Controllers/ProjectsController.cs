@@ -24,10 +24,16 @@ namespace Packages.Twileloop.Controllers
         {
             if (anchor is not null)
             {
-                var clientIp = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
-                var decodedIntegrity = Encoding.UTF8.GetString(Convert.FromBase64String(anchor));
-                var ipDetails = await IPTracker.GetIPInfoAsync(clientIp);
-                Log.Fatal("{@User}: visited '{@Page}' from {@IP}", decodedIntegrity, "Home", ipDetails);
+                try
+                {
+                    var clientIp = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+                    var decodedIntegrity = Encoding.UTF8.GetString(Convert.FromBase64String(anchor));
+                    var ipDetails = await IPTracker.GetIPInfoAsync(clientIp);
+                    Log.Fatal("{@User}: visited '{@Page}' from {@IP}", decodedIntegrity, "Home", ipDetails);
+                }
+                catch
+                {
+                }
             }
             var allProjects = projectRepo.GetAll().ToList();
             return View("home", allProjects);
@@ -39,10 +45,16 @@ namespace Packages.Twileloop.Controllers
         {
             if (anchor is not null)
             {
-                var clientIp = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
-                var decodedIntegrity = Encoding.UTF8.GetString(Convert.FromBase64String(anchor));
-                var ipDetails = await IPTracker.GetIPInfoAsync(clientIp);
-                Log.Fatal("{@User}: visited '{@Page}' from {@IP}", decodedIntegrity, slug, ipDetails);
+                try
+                {
+                    var clientIp = HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+                    var decodedIntegrity = Encoding.UTF8.GetString(Convert.FromBase64String(anchor));
+                    var ipDetails = await IPTracker.GetIPInfoAsync(clientIp);
+                    Log.Fatal("{@User}: visited '{@Page}' from {@IP}", decodedIntegrity, slug, ipDetails);
+                }
+                catch
+                {
+                }
             }
             var project = projectRepo.Find(x => x.Slug == slug).FirstOrDefault();
             return View("Project", project);
